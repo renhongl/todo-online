@@ -14,7 +14,6 @@
 
 .todo-content {
   width: 100%;
-  height: calc(100% - 45px);
   display: flex;
   justify-content: space-between;
 }
@@ -41,7 +40,6 @@
   box-shadow: none !important;
   border: none !important;
   background: #212121;
-  margin-bottom: 100px;
 }
 .example-container {
   width: 400px;

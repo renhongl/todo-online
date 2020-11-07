@@ -26,14 +26,16 @@ import { AppService } from "src/app/services/app.service";
       }
       button {
         width: 240px;
-        margin-top: 10px;
         display: block;
         height: 45px;
-        margin: 10px;
         text-align: left;
+        border-radius: 0;
+        box-sizing: border-box;
+        border-left: 5px solid transparent;
       }
       button.current{
-        background: #009688;
+        background: #353535;
+        border-left: 5px solid #009688;
       }
     `
   ]
