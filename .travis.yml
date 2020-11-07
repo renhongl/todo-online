@@ -14,4 +14,4 @@ deploy:
   github_token: $token
   local_dir: dist/work-online
   on:
-    branch: master
+    branch: main
