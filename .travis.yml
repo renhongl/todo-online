@@ -12,6 +12,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $token
-  local_dir: dist/todo-online
+  local_dir: dist/work-online
   on:
     branch: master
