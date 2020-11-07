@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>创建新计划</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>计划</mat-label>
+      <textarea
+        matInput
+        rows="4"
+        [formControl]="textFormControl"
+        [errorStateMatcher]="matcher"
+        [(ngModel)]="text"
+        placeholder=""
+      ></textarea>
+      <mat-error *ngIf="textFormControl.hasError('required')">
+        <small>计划内容是 <strong>必须的</strong></small>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>计划类型</mat-label>
+      <mat-select [(ngModel)]="type" name="type">
+        <mat-option *ngFor="let item of typeList" [value]="item">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>优先级</mat-label>
+      <mat-select [(ngModel)]="priority" name="priority">
+        <mat-option *ngFor="let item of priorityList" [value]="item">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>取消</button>
+  <button
+    mat-button
+    color="primary"
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    (click)="save()"
+  >
+    创建
+  </button>
+</mat-dialog-actions>
