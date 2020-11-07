@@ -8,7 +8,6 @@
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "prefix": "app",
-      "tsConfig": "./tsconfig.json",
       "styles": [
         "styles.css",
         "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
