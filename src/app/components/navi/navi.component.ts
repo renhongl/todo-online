@@ -7,10 +7,10 @@ import { AppService } from "src/app/services/app.service";
   template: `<mat-drawer-container [class.sideBar]="sideBar" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <div>
-        <button type="button" mat-button (click)="changePage('')">
+        <button type="button" mat-button (click)="changePage('')" [class.current]="current === '/'">
           当前计划
         </button>
-        <button type="button" mat-button (click)="changePage('note')">
+        <button type="button" mat-button (click)="changePage('note')" [class.current]="current === '/note'">
           笔记
         </button>
       </div>
@@ -25,9 +25,15 @@ import { AppService } from "src/app/services/app.service";
         height: 100%;
       }
       button {
-        width: 260px;
+        width: 240px;
         margin-top: 10px;
         display: block;
+        height: 45px;
+        margin: 10px;
+        text-align: left;
+      }
+      button.current{
+        background: #009688;
       }
     `
   ]
@@ -35,6 +41,7 @@ import { AppService } from "src/app/services/app.service";
 export class NaviComponent implements OnInit {
   showFiller = true;
   sideBar = false;
+  current = '/';
 
   @ViewChild("drawer", { static: true }) drawerRef;
 
@@ -50,6 +57,13 @@ export class NaviComponent implements OnInit {
         this.drawerRef.close();
       }
     });
+    this.router.events.subscribe((result: any) => {
+      if (!result.url) {
+        return;
+      }
+      this.current = result.url;
+      console.log(this.current);
+    })
   }
 
   changePage(path) {

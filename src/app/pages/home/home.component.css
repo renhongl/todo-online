@@ -21,7 +21,7 @@
 
 .card {
   width: calc(33% - 10px);
-  background: #e3e3e3;
+  background: #212121;
   border-radius: 4px;
 }
 
@@ -40,7 +40,7 @@
   padding: 0 !important;
   box-shadow: none !important;
   border: none !important;
-  background: #e3e3e3;
+  background: #212121;
   margin-bottom: 100px;
 }
 .example-container {
@@ -63,18 +63,17 @@
 }
 
 .example-box {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgb(255 255 255 / 87%);
   box-sizing: border-box;
   cursor: move;
-  background: white;
+  background: #ffffff17;
   font-size: 14px;
   padding: 10px;
   margin-top: 5px;
+  box-sizing: border-box;
 }
 
-.example-box:last-child {
-  border-bottom: solid 1px #ccc !important;
-}
+
 
 .cdk-drag-preview {
   box-sizing: border-box;
@@ -112,7 +111,7 @@
 }
 
 .box-text {
-  width: 100%;
+  width: calc(100% - 20px);
   display: block;
   /* overflow: hidden; */
   line-height: 25px;
@@ -167,19 +166,22 @@
 }
 
 .low {
-  border-left: 5px solid #21c726;
+  border-left: 5px solid #4caf50;
 }
 
 .normal {
-  border-left: 5px solid #d7c703;
+  border-left: 5px solid #ffeb3b;
 }
 
 .hight {
-  border-left: 5px solid red;
+  border-left: 5px solid #e91e63;
 }
 
 .delete-btn {
   display: none;
+  position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .done-box:hover .delete-btn {

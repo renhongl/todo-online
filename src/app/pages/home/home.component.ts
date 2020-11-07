@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -11,21 +11,28 @@ import {
 } from "@angular/material/dialog";
 import { CreateDialogComponent } from "./create-dialog/create-dialog.component";
 
-const todoStr = localStorage.getItem("tl-todo") || "[]";
-const processStr = localStorage.getItem("tl-process") || "[]";
-const doneStr = localStorage.getItem("tl-done") || "[]";
+
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"]
 })
-export class HomeComponent {
-  todo = JSON.parse(todoStr);
-  process = JSON.parse(processStr);
-  done = JSON.parse(doneStr);
+export class HomeComponent implements OnInit{
+  todo = [];
+  process = [];
+  done = [];
 
   constructor(public dialog: MatDialog) {}
+
+  ngOnInit() {
+    const todoStr = localStorage.getItem("tl-todo") || "[]";
+    const processStr = localStorage.getItem("tl-process") || "[]";
+    const doneStr = localStorage.getItem("tl-done") || "[]";
+    this.todo = JSON.parse(todoStr);
+    this.process = JSON.parse(processStr);
+    this.done = JSON.parse(doneStr);
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
