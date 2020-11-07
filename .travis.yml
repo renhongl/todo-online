@@ -1,16 +1,17 @@
 language: node_js
 node_js:
-  - "stable"
+  - "12"
 cache:
   directories:
   - node_modules
 script:
   - npm run build
 
+
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $token
-  local_dir: build
+  local_dir: dist/todo-online
   on:
     branch: master
