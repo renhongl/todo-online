@@ -33,47 +33,45 @@
           </div>
           <mat-card
             class="example-box starting-box"
-            [class.low]="item.priority.value === 0"
-            [class.normal]="item.priority.value === 1"
-            [class.hight]="item.priority.value === 2"
+            [class.low]="item.type.value === 0"
+            [class.normal]="item.type.value === 1"
+            [class.hight]="item.type.value === 2"
             *ngFor="let item of todo"
             cdkDrag
           >
             <span class="box-text">{{item.text}}</span>
             <div class="actions">
-              <button
-                mat-icon-button
-                color="primary"
-                *ngIf="item.type.value === 0"
-                class="status-btn"
+              <div
+                *ngIf="item.priority.value === 0"
+                class="status-btn low-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  bug_report
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                color="primary"
-                *ngIf="item.type.value === 1"
-                class="status-btn"
+              </div>
+              <div
+                color="accent"
+                *ngIf="item.priority.value === 1"
+                class="status-btn normal-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  edit_road
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                color="primary"
-                class="status-btn"
-                *ngIf="item.type.value === 2"
+              </div>
+              <div
+                class="status-btn high-btn"
+                *ngIf="item.priority.value === 2"
                 aria-label="Example icon button with a vertical three dot icon"
               >
-                <span class="material-icons">
-                  assignment
-                </span>
-              </button>
+              <span class="material-icons high1">
+                expand_less
+              </span>
+              <span class="material-icons high2">
+                expand_less
+              </span>
+            </div>
               <span class="time">
                 {{item.time}}
               </span>
@@ -100,47 +98,45 @@
           </div>
           <mat-card
             class="example-box process-box"
-            [class.low]="item.priority.value === 0"
-            [class.normal]="item.priority.value === 1"
-            [class.hight]="item.priority.value === 2"
+            [class.low]="item.type.value === 0"
+            [class.normal]="item.type.value === 1"
+            [class.hight]="item.type.value === 2"
             *ngFor="let item of process"
             cdkDrag
           >
             <span class="box-text">{{item.text}}</span>
             <div class="actions">
-              <button
-                mat-icon-button
-                color="primary"
-                *ngIf="item.type.value === 0"
-                class="status-btn"
+              <div
+                *ngIf="item.priority.value === 0"
+                class="status-btn low-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  bug_report
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                color="primary"
-                *ngIf="item.type.value === 1"
-                class="status-btn"
+              </div>
+              <div
+                color="accent"
+                *ngIf="item.priority.value === 1"
+                class="status-btn normal-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  edit_road
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                color="primary"
-                class="status-btn"
-                *ngIf="item.type.value === 2"
+              </div>
+              <div
+                class="status-btn high-btn"
+                *ngIf="item.priority.value === 2"
                 aria-label="Example icon button with a vertical three dot icon"
               >
-                <span class="material-icons">
-                  assignment
-                </span>
-              </button>
+              <span class="material-icons high1">
+                expand_less
+              </span>
+              <span class="material-icons high2">
+                expand_less
+              </span>
+            </div>
 
               <span class="time">
                 {{item.time}}
@@ -168,64 +164,52 @@
           </div>
           <mat-card
             class="example-box done-box"
-            [class.low]="item.priority.value === 0"
-            [class.normal]="item.priority.value === 1"
-            [class.hight]="item.priority.value === 2"
+            [class.low]="item.type.value === 0"
+            [class.normal]="item.type.value === 1"
+            [class.hight]="item.type.value === 2"
             *ngFor="let item of done"
             cdkDrag
           >
             <span class="box-text">{{item.text}}</span>
             <div class="actions">
-              <button
-                mat-icon-button
-                style="color: gray;"
-                *ngIf="item.type.value === 0"
-                class="status-btn"
+              <div
+                *ngIf="item.priority.value === 0"
+                class="status-btn low-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  bug_report
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                style="color: gray;"
-                *ngIf="item.type.value === 1"
-                class="status-btn"
+              </div>
+              <div
+                color="accent"
+                *ngIf="item.priority.value === 1"
+                class="status-btn normal-btn"
                 aria-label="Example icon button with a vertical three dot icon"
               >
                 <span class="material-icons">
-                  edit_road
+                  upgrade
                 </span>
-              </button>
-              <button
-                mat-icon-button
-                style="color: gray;"
-                class="status-btn"
-                *ngIf="item.type.value === 2"
+              </div>
+              <div
+                class="status-btn high-btn"
+                *ngIf="item.priority.value === 2"
                 aria-label="Example icon button with a vertical three dot icon"
               >
-                <span class="material-icons">
-                  assignment
-                </span>
-              </button>
-              <button
-                mat-icon-button
-                matTooltip="删除"
-                matTooltipPosition="above"
-                color="primary"
-                class="status-btn delete-btn"
-                (click)="deleteFromDone(item)"
-                aria-label="Example icon button with a vertical three dot icon"
-              >
-                <span class="material-icons">
-                  delete
-                </span>
-              </button>
+              <span class="material-icons high1">
+                expand_less
+              </span>
+              <span class="material-icons high2">
+                expand_less
+              </span>
+            </div>
               <span class="time">
                 {{item.time}}
               </span>
             </div>
+            <button class="delete-btn" (click)="deleteFromDone(item)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
           </mat-card>
         </div>
       </mat-card>

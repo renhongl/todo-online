@@ -84,6 +84,7 @@ export class HomeComponent implements OnInit{
 
   deleteFromDone(item) {
     this.done = this.done.filter((one) => one.id !== item.id);
+    this.saveToLocal();
   }
 
   openCreateDialog(): void {

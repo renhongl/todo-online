@@ -35,15 +35,15 @@ export class CreateDialogComponent {
   text = "";
   typeList = [
     {
-      name: "错误",
+      name: "新功能",
       value: 0
     },
     {
-      name: "更新",
+      name: "增强功能",
       value: 1
     },
     {
-      name: "新功能",
+      name: "错误",
       value: 2
     }
   ];
